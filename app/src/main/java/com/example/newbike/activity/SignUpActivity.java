@@ -18,10 +18,14 @@ import com.example.newbike.R;
 import com.example.newbike.model.User;
 import com.example.newbike.util.ToastUtil;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -74,27 +78,47 @@ public class SignUpActivity extends AppCompatActivity {
             case R.id.btn_sign_up:
                 String phone = etPhone.getText().toString().trim();
                 String psw = etPsw.getText().toString().trim();
+                if (phone.equals("")) {
+                    ToastUtil.show("手机号码不能为空");
+                    return;
+                }
                 if (!isMobileNO(phone)) {
                     ToastUtil.show("请输入正确的手机号码");
                     return;
                 }
-                if (phone.equals("") && psw.equals("")) {
-                    ToastUtil.show("手机号码和密码均不能为空");
+                if (psw.equals("")) {
+                    ToastUtil.show("密码不能为空");
                     return;
                 }
-                User user = new User();
-                user.setUsername(phone);
-                user.setPassword(psw);
-                user.setIspayment(false);
-                user.signUp(new SaveListener<User>() {
+                //这样就可以了
+                BmobQuery<User> query = new BmobQuery<>();
+                query.addWhereEqualTo("username", etPhone.getText().toString().trim());
+                query.findObjects(new FindListener<User>() {
                     @Override
-                    public void done(User user, BmobException e) {
+                    public void done(List<User> list, BmobException e) {
                         if (e == null) {
-                            ToastUtil.show("注册成功");
-                            startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+                            if (list.size() != 0) {
+                                ToastUtil.show("该注册用户已存在");
+                            } else {
+                                User user = new User();
+                                user.setUsername(phone);
+                                user.setPassword(psw);
+                                user.setIspayment(false);
+                                user.signUp(new SaveListener<User>() {
+                                    @Override
+                                    public void done(User user, BmobException e) {
+                                        if (e == null) {
+                                            ToastUtil.show("注册成功");
+                                            startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                                        } else {
+                                            ToastUtil.show("注册失败");
+                                            Log.e("sssssssssssss", "done: " + e);
+                                        }
+                                    }
+                                });
+                            }
                         } else {
-                            ToastUtil.show("注册失败");
-                            Log.e("sssssssssssss", "done: "+e );
+                            //查询出错
                         }
                     }
                 });
@@ -108,11 +132,11 @@ public class SignUpActivity extends AppCompatActivity {
     public static boolean isMobileNO(String mobiles) {
 		/*
 		移动：134、135、136、137、138、139、150、151、157(TD)、158、159、187、188
-		联通：130、131、132、152、155、156、185、186
+		联通：130、131、132、152、155、156、166、185、186
 		电信：133、153、180、189、（1349卫通）
-		总结起来就是第一位必定为1，第二位必定为3或5或8，其他位置的可以为0-9
+		总结起来就是第一位必定为1，第二位必定为3或5或6或8，其他位置的可以为0-9
 		*/
-        String telRegex = "[1][358]\\d{9}";//"[1]"代表第1位为数字1，"[358]"代表第二位可以为3、5、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
+        String telRegex = "[1][3568]\\d{9}";//"[1]"代表第1位为数字1，"[358]"代表第二位可以为3、5、6、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
         if (TextUtils.isEmpty(mobiles)) return false;
         else return mobiles.matches(telRegex);
     }

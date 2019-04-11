@@ -11,7 +11,7 @@
 
     <include layout="@layout/item_title" />
 
-    <include layout="@layout/item_line" />
+    <include layout="@layout/item_line_1" />
 
     <EditText
         android:id="@+id/et_phone"
@@ -24,7 +24,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp" />
 
-    <include layout="@layout/item_line" />
+    <include layout="@layout/item_line_1" />
 
     <EditText
         android:id="@+id/et_psw"
@@ -37,7 +37,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp" />
 
-    <include layout="@layout/item_line" />
+    <include layout="@layout/item_line_1" />
 
     <Button
         android:id="@+id/btn_sign_up"

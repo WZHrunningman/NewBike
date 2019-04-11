@@ -145,11 +145,25 @@ public class IndexActivity extends RxActivity {
                                                 Log.i(TAG, "纬度 ----------------" + aMapLocation.getLatitude());//获取纬度
                                                 Log.i(TAG, "经度-----------------" + aMapLocation.getLongitude());//获取经度
                                                 Log.i(TAG, "地址-----------------" + aMapLocation.getAddress());//地址，如果option中设置isNeedAddress为false，则没有此结果，网络定位结果中会有地址信息，GPS定位不返回地址信息
-                                                int payment = Integer.parseInt(Integer.parseInt(Integer.parseInt(tvTime.getText().toString().trim()) * 5
+                                                /*int payment = Integer.parseInt(Integer.parseInt(Integer.parseInt(tvTime.getText().toString().trim()) * 5
                                                         + tvMinute.getText().toString().trim()) / 60 * 5
                                                         + tvSconed.getText().toString().trim()) / 3600 * 5;
                                                     if (payment < 1) {
                                                     payment = 1;
+                                                }*/
+                                                int payment = 0;
+                                                int time = Integer.parseInt(Integer.parseInt(Integer.parseInt(tvTime.getText().
+                                                toString().trim()) * 60
+                                                + tvMinute.getText().toString().trim())
+                                                + tvSconed.getText().toString().trim()) / 60;
+                                                if (time <= 30) {
+                                                    payment = 1;
+                                                }else if (30<time & time<=60){
+                                                    payment = 2;
+                                                }else if (60<time & time<=90){
+                                                    payment = 3;
+                                                }else if (90<time & time<=120) {
+                                                    payment = 4;
                                                 }
                                                 DecimalFormat df = new DecimalFormat("#.00");
                                                 Money money = new Money();

@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
                 } else {
-                    ToastUtil.show("登录失败");
+                    ToastUtil.show("登录失败，用户账号或密码错误");
                 }
             }
         });

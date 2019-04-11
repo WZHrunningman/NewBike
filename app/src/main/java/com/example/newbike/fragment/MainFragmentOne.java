@@ -3,6 +3,7 @@ package com.example.newbike.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,6 +24,7 @@ import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
+import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
@@ -235,7 +237,7 @@ public class MainFragmentOne extends Fragment {
 
     private void centreDialog() {
         new XPopup.Builder(context)
-                .asCenterList("请选择：", new String[]{"手动输入号码", "扫码解锁"}, new OnSelectListener() {
+                .asCenterList("请选择：", new String[]{"手动输入车牌号", "扫码解锁"}, new OnSelectListener() {
                     @Override
                     public void onSelect(int position, String text) {
                         switch (position) {
@@ -293,21 +295,73 @@ public class MainFragmentOne extends Fragment {
         mUiSettings.setMyLocationButtonEnabled(true);
         LatLng latLng = new LatLng(23.1373810000, 113.2380560000);
         final Marker marker = aMap.addMarker(new MarkerOptions().position(latLng).title("北京").snippet("DefaultMarker"));
-        LatLng latLng1 = new LatLng(23.1559200000,113.0308500000);
-        final Marker marker1 = aMap.addMarker(new MarkerOptions().position(latLng1).title("车牌号").snippet("111"));
-        LatLng latLng2 = new LatLng(23.1365320624,113.0253481865);
-        final Marker marker2 = aMap.addMarker(new MarkerOptions().position(latLng2).title("车牌号").snippet("自定义"));
-        LatLng latLng3 = new LatLng(23.1384263072,113.0253696442);
-        final Marker marker3 = aMap.addMarker(new MarkerOptions().position(latLng3).title("车牌号").snippet("自定义"));
-        LatLng latLng4 = new LatLng(23.1390774477,113.0265712738);
-        final Marker marker4 = aMap.addMarker(new MarkerOptions().position(latLng4).title("车牌号").snippet("自定义"));
-        LatLng latLng5 = new LatLng(23.1391563736,113.0249190331);
-        final Marker marker5 = aMap.addMarker(new MarkerOptions().position(latLng5).title("车牌号").snippet("自定义"));
-        LatLng latLng6 = new LatLng(23.1381303332,113.0239534378);
-        final Marker marker6 = aMap.addMarker(new MarkerOptions().position(latLng6).title("车牌号").snippet("自定义"));
-        LatLng latLng7 = new LatLng(23.1367096490,113.0231165886);
-        final Marker marker7 = aMap.addMarker(new MarkerOptions().position(latLng7 ).title("车牌号").snippet("自定义"));
-        List<MarkerOptions> list = new ArrayList<>();
+        LatLng latLng1 = new LatLng(23.1559200000, 113.0308500000);
+        LatLng latLng2 = new LatLng(23.1365320624, 113.0253481865);
+        LatLng latLng3 = new LatLng(23.1384263072, 113.0253696442);
+        LatLng latLng4 = new LatLng(23.1390774477, 113.0265712738);
+        LatLng latLng5 = new LatLng(23.1391563736, 113.0249190331);
+        LatLng latLng6 = new LatLng(23.1381303332, 113.0239534378);
+        LatLng latLng7 = new LatLng(23.1367096490, 113.0231165886);
+
+
+        MarkerOptions markerOption = new MarkerOptions();
+
+        markerOption.position(latLng1);//position标记的经纬值
+        markerOption.title("车牌号").snippet("32453252");
+        markerOption.draggable(false);//设置Marker不可拖动
+        markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                .decodeResource(getResources(), R.drawable.icon_marker)));
+        markerOption.setFlat(true);//设置marker平贴地图效
+        Marker marker1 = aMap.addMarker(markerOption);
+
+        markerOption.position(latLng2);//替换上面的latlng
+        markerOption.title("车牌号").snippet("111");
+        markerOption.draggable(false);//设置Marker不可拖动
+        markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                .decodeResource(getResources(), R.drawable.icon_marker)));
+        markerOption.setFlat(true);//设置marker平贴地图效
+        Marker marker2 = aMap.addMarker(markerOption);
+
+        markerOption.position(latLng3);//替换上面的latlng
+        markerOption.title("车牌号").snippet("3727676");
+        markerOption.draggable(false);//设置Marker不可拖动
+        markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                .decodeResource(getResources(), R.drawable.icon_marker)));
+        markerOption.setFlat(true);//设置marker平贴地图效
+        Marker marker3 = aMap.addMarker(markerOption);
+
+        markerOption.position(latLng4);//替换上面的latlng
+        markerOption.title("车牌号").snippet("222");
+        markerOption.draggable(false);//设置Marker不可拖动
+        markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                .decodeResource(getResources(), R.drawable.icon_marker)));
+        markerOption.setFlat(true);//设置marker平贴地图效
+        Marker marker4 = aMap.addMarker(markerOption);
+
+        markerOption.position(latLng5);//替换上面的latlng
+        markerOption.title("车牌号").snippet("333");
+        markerOption.draggable(false);//设置Marker不可拖动
+        markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                .decodeResource(getResources(), R.drawable.icon_marker)));
+        markerOption.setFlat(true);//设置marker平贴地图效
+        Marker marker5 = aMap.addMarker(markerOption);
+
+        markerOption.position(latLng6);//替换上面的latlng
+        markerOption.title("车牌号").snippet("01234");
+        markerOption.draggable(false);//设置Marker不可拖动
+        markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                .decodeResource(getResources(), R.drawable.icon_marker)));
+        markerOption.setFlat(true);//设置marker平贴地图效
+        Marker marker6 = aMap.addMarker(markerOption);
+
+        markerOption.position(latLng7);//替换上面的latlng
+        markerOption.title("车牌号").snippet("555");
+        markerOption.draggable(false);//设置Marker不可拖动
+        markerOption.icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory
+                .decodeResource(getResources(), R.drawable.icon_marker)));
+        // 将Marker设置为贴地显示，可以双指下拉地图查看效果
+        markerOption.setFlat(true);//设置marker平贴地图效
+        Marker marker7 = aMap.addMarker(markerOption);  //最后，放到这里面，
     }
 
     @Override
@@ -370,7 +424,7 @@ public class MainFragmentOne extends Fragment {
                             bundle1.putString("car_num", bikeNum);
                             bundle1.putString("objectId", s);
                             intent.putExtras(bundle1);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         }
                     });
