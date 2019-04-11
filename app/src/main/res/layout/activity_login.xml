@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/new_title_color"
+    tools:context=".activity.LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/login"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <include layout="@layout/item_line" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@null"
+        android:hint="@string/input_your_phone"
+        android:inputType="phone"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+    <include layout="@layout/item_line" />
+
+    <EditText
+        android:id="@+id/et_psw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:hint="@string/input_your_psw"
+        android:inputType="numberPassword"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+    <include layout="@layout/item_line" />
+
+    <TextView
+        android:id="@+id/tv_SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="@string/new_user_click_to_register"
+        android:textColor="@color/redE"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/shape_sign_up_button"
+        android:text="@string/login"
+        android:textColor="@color/white" />
+
+</LinearLayout>

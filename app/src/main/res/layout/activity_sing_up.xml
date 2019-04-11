@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/title_color"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".activity.SignUpActivity">
+
+    <include layout="@layout/item_title" />
+
+    <include layout="@layout/item_line" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@null"
+        android:hint="@string/input_your_phone"
+        android:inputType="phone"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+    <include layout="@layout/item_line" />
+
+    <EditText
+        android:id="@+id/et_psw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:hint="@string/input_your_psw"
+        android:inputType="numberPassword"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+    <include layout="@layout/item_line" />
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/shape_sign_up_button"
+        android:text="@string/sign_up"
+        android:textColor="@color/white" />
+
+</LinearLayout>

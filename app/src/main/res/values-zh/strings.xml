@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">嗒嗒单车</string>
+    <string name="input_your_phone">请输入您的手机号</string>
+    <string name="sign_up">注册</string>
+    <string name="login">登录</string>
+    <string name="input_your_psw">请输入您的密码</string>
+    <string name="sweep_code_unlock">单车解锁</string>
+    <string name="input_money">请输入自定义金额</string>
+    <string name="bike_list">租车清单</string>
+    <string name="bike_num">车牌号</string>
+    <string name="bike_num1">车牌号:</string>
+    <string name="bike_date">租车日期</string>
+    <string name="use_bike_time">租车时长</string>
+    <string name="billing_standard">租车费用规则：租车费用 = 租车时长(半小时) * 1/元</string>
+    <string name="go_to_navigation">前去导航</string>
+    <string name="returning_the_car">还车结算</string>
+    <string name="want_recharge">我想充值</string>
+    <string name="twenty_yuan">20元</string>
+    <string name="fifty_yuan">50元</string>
+    <string name="hundred_yuan">100元</string>
+    <string name="determine_recharge">确定充值</string>
+    <string name="refresh">刷新</string>
+    <string name="balance">余额:</string>
+    <string name="recharge">充值</string>
+    <string name="deposit_payment">押金缴纳</string>
+    <string name="stroke">行程</string>
+    <string name="customer_service">客服</string>
+    <string name="setting">设置</string>
+    <string name="starting_point">起点处</string>
+    <string name="end_point">终点处</string>
+    <string name="riding_time">骑行时间：</string>
+    <string name="new_user_click_to_register">新用户？点击注册</string>
+    <string name="sign_out">退出登录</string>
+    <string name="found_bike_failure">发现车辆故障</string>
+    <string name="deposit_description">押金说明</string>
+    <string name="recharge_instructions">充值说明</string>
+    <string name="report_violation">举报违停</string>
+    <string name="no_travel_record">暂时还没有行程记录哦</string>
+</resources>
