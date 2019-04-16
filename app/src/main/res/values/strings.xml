@@ -36,4 +36,6 @@
     <string name="recharge_instructions">Recharge Instructions</string>
     <string name="report_violation">Report Violation</string>
     <string name="no_travel_record">There is no travel record yet.</string>
+    <string name="please_login">Please Login</string>
+    <string name="go_to_login">Login</string>
 </resources>

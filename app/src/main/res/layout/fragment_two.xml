@@ -276,7 +276,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="您还未登录哦，请登录"
+            android:text="@string/please_login"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -285,7 +285,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_sign_up_button"
-            android:text="去登录"
+            android:text="@string/go_to_login"
             android:textColor="@color/white"
             android:textSize="12sp" />
     </LinearLayout>

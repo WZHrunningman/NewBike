@@ -36,4 +36,6 @@
     <string name="recharge_instructions">充值说明</string>
     <string name="report_violation">举报违停</string>
     <string name="no_travel_record">暂时还没有行程记录哦</string>
+    <string name="please_login">您还未登录哦，请登录</string>
+    <string name="go_to_login">去登录</string>
 </resources>
