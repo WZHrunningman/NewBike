@@ -175,6 +175,7 @@ public class MainFragmentTwo extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);//跳转到主界面后，并将栈底的Activity全部都销毁
                     startActivity(intent);
                 }
             });
@@ -226,7 +227,7 @@ public class MainFragmentTwo extends Fragment {
         llService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:400000000"));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:5285286666"));
                 startActivity(intent);
             }
         });

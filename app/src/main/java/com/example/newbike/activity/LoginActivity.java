@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -71,8 +72,12 @@ public class LoginActivity extends AppCompatActivity {
             public void done(User user, BmobException e) {
                 if (e == null) {
                     ToastUtil.show("登录成功");
+                    etPhone.setText("");
+                    etPsw.setText("");
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);//跳转到主界面后，并将栈底的Activity全部都销毁
                     startActivity(intent);
+                    LoginActivity.this.finish();
                 } else {
                     ToastUtil.show("登录失败，用户账号或密码错误");
                 }
@@ -82,7 +87,15 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.tv_SignUp)
     public void onSignUpClick() {
+        etPhone.setText("");
+        etPsw.setText("");
         Intent intent = new Intent(LoginActivity.this,SignUpActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        etPhone.requestFocus();
     }
 }
