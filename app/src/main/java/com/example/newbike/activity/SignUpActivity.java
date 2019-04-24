@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.newbike.R;
 import com.example.newbike.model.User;
+import com.example.newbike.util.EditTextUtils;
 import com.example.newbike.util.ToastUtil;
 
 import java.util.List;
@@ -36,6 +37,8 @@ public class SignUpActivity extends AppCompatActivity {
     TextView tvTitle;
     @BindView(R.id.et_phone)
     EditText etPhone;
+    @BindView(R.id.cl1)
+    Button cl1;
     @BindView(R.id.et_psw)
     EditText etPsw;
     @BindView(R.id.btn_sign_up)
@@ -47,6 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sing_up);
         ButterKnife.bind(this);
         tvTitle.setText("注册");
+        EditTextUtils.clearButtonListener(etPhone, cl1);
         etPhone.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

@@ -31,10 +31,6 @@
     <string name="riding_time">Riding Time：</string>
     <string name="new_user_click_to_register">new user? Click to register</string>
     <string name="sign_out">sign out</string>
-    <string name="found_bike_failure">Found Bike Failure</string>
-    <string name="deposit_description">Deposit Description</string>
-    <string name="recharge_instructions">Recharge Instructions</string>
-    <string name="report_violation">Report Violation</string>
     <string name="no_travel_record">There is no travel record yet.</string>
     <string name="please_login">Please Login</string>
     <string name="go_to_login">Login</string>
