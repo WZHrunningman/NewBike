@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.newbike.R;
 import com.example.newbike.model.User;
+import com.example.newbike.util.EditTextUtils;
 import com.example.newbike.util.ToastUtil;
 
 import java.util.List;
@@ -27,6 +28,7 @@ import static com.example.newbike.activity.SignUpActivity.isMobileNO;
 
 public class LoginActivity extends AppCompatActivity {
 
+    //2.使用黄油刀找到对应控件,绑定View
     @BindView(R.id.et_phone)
     EditText etPhone;
     @BindView(R.id.et_psw)
@@ -35,12 +37,16 @@ public class LoginActivity extends AppCompatActivity {
     Button btnSignUp;
     @BindView(R.id.tv_SignUp)
     TextView tvSignUp;
+    @BindView(R.id.cl2)
+    Button cl2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //1.将黄油刀框架绑定到这个Activity上
         ButterKnife.bind(this);
+        EditTextUtils.clearButtonListener(etPhone,cl2);
 
         etPhone.addTextChangedListener(new TextWatcher() {
             @Override

@@ -35,7 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="0.15"
-            android:background="@drawable/clear"/>
+            android:background="@drawable/close"/>
     </LinearLayout>
 
     <include layout="@layout/item_line_1" />

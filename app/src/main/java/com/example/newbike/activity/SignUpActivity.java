@@ -31,6 +31,7 @@ import cn.bmob.v3.listener.SaveListener;
 
 public class SignUpActivity extends AppCompatActivity {
 
+    //2.使用黄油刀找到对应控件,绑定View
     @BindView(R.id.ll_back)
     LinearLayout llBack;
     @BindView(R.id.tv_title)
@@ -48,9 +49,11 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sing_up);
+        //1.将黄油刀框架绑定到这个Activity上
         ButterKnife.bind(this);
         tvTitle.setText("注册");
         EditTextUtils.clearButtonListener(etPhone, cl1);
+
         etPhone.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -73,6 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+    //3.绑定点击view和执行事件的方法R.id.ll_back或R.id.btn_sign_up所指控件被点击，就执行这个方法
     @OnClick({R.id.ll_back, R.id.btn_sign_up})
     public void onClick(View view) {
         switch (view.getId()) {
