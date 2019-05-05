@@ -70,6 +70,7 @@ public class MainFragmentOne extends Fragment {
     TextView tvSweepCode;
     @BindView(R.id.iv_navigation)
     ImageView ivNavigation;
+
     private Context context;
     private AMap aMap;
     private MyLocationStyle myLocationStyle;
@@ -107,6 +108,7 @@ public class MainFragmentOne extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_one, container, false);
+        //返回一个Unbinder值(一个实例)（进行解绑），注意这里的this不能使用getActivity()
         unbinder = ButterKnife.bind(this, view);
         map.onCreate(savedInstanceState);
         initMap();
@@ -470,6 +472,9 @@ public class MainFragmentOne extends Fragment {
         map.onSaveInstanceState(outState);
     }
 
+    /**
+     * onDestroyView中进行解绑操作
+     */
     @Override
     public void onDestroyView() {
         super.onDestroyView();

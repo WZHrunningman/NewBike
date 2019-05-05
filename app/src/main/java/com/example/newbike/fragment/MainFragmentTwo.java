@@ -99,6 +99,7 @@ public class MainFragmentTwo extends Fragment {
     TextView tvRefuse;
     @BindView(R.id.tv_pay)
     TextView tvPay;
+
     private Context context;
     private List<Integer> doubleList;
     private int money = 0;
@@ -117,6 +118,7 @@ public class MainFragmentTwo extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_two, container, false);
+        //返回一个Unbinder值(一个实例)（进行解绑），注意这里的this不能使用getActivity()
         unbinder = ButterKnife.bind(this, view);
         initView();
         return view;
@@ -528,6 +530,9 @@ public class MainFragmentTwo extends Fragment {
         }
     }
 
+    /**
+     * onDestroyView中进行解绑操作
+     */
     @Override
     public void onDestroyView() {
         super.onDestroyView();
