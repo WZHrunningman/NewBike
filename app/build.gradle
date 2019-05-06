@@ -21,9 +21,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8  //指定编译编译.java文件的jdk版本
+        targetCompatibility JavaVersion.VERSION_1_8  //确保.class文件与targetCompatibility所指定版本或者更新版本的java虚拟机兼容
     }
+    buildToolsVersion = '28.0.3'
     defaultConfig {
         ndk {
             //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）

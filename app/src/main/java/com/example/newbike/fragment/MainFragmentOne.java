@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -163,41 +162,49 @@ public class MainFragmentOne extends Fragment {
             @Override
             public void onClick(View v) {
                 AmapNaviPage.getInstance().showRouteActivity(context, new AmapNaviParams(null), new INaviInfoCallback() {
+                    //导航初始化失败时的回调函数
                     @Override
                     public void onInitNaviFailure() {
 
                     }
 
+                    //导航播报信息回调函数
                     @Override
                     public void onGetNavigationText(String s) {
 
                     }
 
+                    //当GPS位置有更新时的回调函数。
                     @Override
                     public void onLocationChange(AMapNaviLocation aMapNaviLocation) {
 
                     }
 
+                    //到达目的地后回调函数。
                     @Override
                     public void onArriveDestination(boolean b) {
 
                     }
 
+                    //启动导航后的回调函数
                     @Override
                     public void onStartNavi(int i) {
 
                     }
 
+                    //算路成功回调 路线id数组
                     @Override
                     public void onCalculateRouteSuccess(int[] ints) {
 
                     }
 
+                    //步行或者驾车路径规划失败后的回调函数
                     @Override
                     public void onCalculateRouteFailure(int i) {
 
                     }
 
+                    //停止语音回调，收到此回调后用户可以停止播放语音
                     @Override
                     public void onStopSpeaking() {
 
