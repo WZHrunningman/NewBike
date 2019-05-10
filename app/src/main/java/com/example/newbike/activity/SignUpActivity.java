@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.newbike.R;
 import com.example.newbike.model.User;
@@ -40,6 +39,8 @@ public class SignUpActivity extends AppCompatActivity {
     EditText etPhone;
     @BindView(R.id.cl1)
     Button cl1;
+    @BindView(R.id.cl3)
+    Button cl3;
     @BindView(R.id.et_psw)
     EditText etPsw;
     @BindView(R.id.btn_sign_up)
@@ -53,6 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         tvTitle.setText("注册");
         EditTextUtils.clearButtonListener(etPhone, cl1);
+        EditTextUtils.clearButtonListener(etPsw, cl3);
 
         etPhone.addTextChangedListener(new TextWatcher() {
             @Override

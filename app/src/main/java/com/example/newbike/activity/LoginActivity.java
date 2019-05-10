@@ -39,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     TextView tvSignUp;
     @BindView(R.id.cl2)
     Button cl2;
+    @BindView(R.id.cl4)
+    Button cl4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         //1.将黄油刀框架绑定到这个Activity上
         ButterKnife.bind(this);
         EditTextUtils.clearButtonListener(etPhone,cl2);
+        EditTextUtils.clearButtonListener(etPsw,cl4);
 
         etPhone.addTextChangedListener(new TextWatcher() {
             @Override
