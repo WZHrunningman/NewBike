@@ -69,6 +69,12 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     btnSignUp.setBackgroundResource(R.drawable.shape_sign_up_button_pre);
                 }
+                if (s != null && s.length() == 13) {
+                    if (etPhone.isFocused()) {
+                        etPhone.clearFocus();
+                        etPsw.requestFocus();
+                    }
+                }
             }
         });
 
