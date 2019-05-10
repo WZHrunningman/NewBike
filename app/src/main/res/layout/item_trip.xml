@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:singleLine="true"
+            android:singleLine="false"
             android:text="@string/starting_point"
             android:textColor="@color/blackThree"
             android:textSize="16sp" />
@@ -93,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:singleLine="true"
+            android:singleLine="false"
             android:text="@string/end_point"
             android:textColor="@color/blackThree"
             android:textSize="16sp" />
