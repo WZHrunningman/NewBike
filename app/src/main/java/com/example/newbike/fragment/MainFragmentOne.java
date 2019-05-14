@@ -239,6 +239,11 @@ public class MainFragmentOne extends Fragment {
                     public void onArrivedWayPoint(int i) {
 
                     }
+
+                    @Override
+                    public void onMapTypeChanged(int i) {
+
+                    }
                 });
             }
         });

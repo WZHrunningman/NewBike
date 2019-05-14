@@ -304,6 +304,11 @@ public class IndexActivity extends RxActivity {
                     public void onArrivedWayPoint(int i) {
 
                     }
+
+                    @Override
+                    public void onMapTypeChanged(int i) {
+
+                    }
                 });
             }
         });
